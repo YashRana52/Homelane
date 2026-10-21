@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#41303e" />
+    <title>Aangan Interiors — Home interiors, designed around you</title>
+    <meta
+      name="description"
+      content="End-to-end home interior design — modular kitchens, wardrobes, full-home interiors and renovations. Free design consultation and instant price estimates."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+
+    <!--
+      No hero preload here, deliberately.
+
+      Preloading the homepage hero from index.html does help that one route —
+      in an SPA the hero URL is otherwise unknown until React has rendered.
+      But index.html is served for every route, so the preload fired on
+      /luxe, /price-calculator and the rest too, pulling ~110 kB of an image
+      those pages never display. Measured: it bought nothing on / and cost
+      every other route.
+
+      Scoping a preload per route needs server-rendered HTML, which PLAN.md §9
+      lists as a non-goal for this build.
+    -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

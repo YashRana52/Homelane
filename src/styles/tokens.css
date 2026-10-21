@@ -1,0 +1,141 @@
+/* =============================================================================
+   DESIGN TOKENS — raw brand values
+   -----------------------------------------------------------------------------
+   This is the single source of truth for brand colour.
+   Values extracted from a live CSS audit of premium Indian interior-design
+   sites (see PLAN.md §3.1). Do not hardcode colours anywhere else.
+
+   theme.css maps these into Tailwind's @theme namespaces, so changing a value
+   here changes every utility across the app.
+   ============================================================================= */
+
+:root {
+  /* ---------- Brand: primary (coral) ---------- */
+  --c-primary-50: #fdeeef;
+  --c-primary-100: #fbdcde;
+  --c-primary-200: #f8c4c6;
+  --c-primary-300: #f18b8f;
+  --c-primary-400: #d9666b;
+  --c-primary-500: #c8494e; /* main CTA */
+  --c-primary-600: #b23c41; /* hover */
+  --c-primary-700: #9c363b; /* active */
+  --c-primary-800: #93383c;
+  --c-primary-900: #6e2a2d;
+
+  /* ---------- Brand: secondary (plum) ---------- */
+  --c-secondary-100: #ece8eb;
+  --c-secondary-300: #8e7d8b;
+  --c-secondary-500: #5e455a;
+  --c-secondary-700: #41303e; /* default body text */
+  --c-secondary-900: #2b202a;
+
+  /* ---------- Warm neutral surface scale ---------- */
+  --c-surface: #ffffff;
+  --c-surface-50: #f5f4f5;
+  --c-surface-100: #eceaeb;
+  --c-surface-200: #d9d6d8;
+  --c-surface-300: #979496;
+  --c-surface-400: #9a9198;
+  --c-surface-600: #746972;
+  --c-surface-800: #574a54;
+  --c-surface-900: #41303e;
+
+  /* ---------- Accents ---------- */
+  --c-gold-200: #f3ede2; /* Champagne silk / pearl */
+  --c-gold-400: #d4b483; /* Refined champagne gold */
+  --c-gold-600: #b38850; /* Architectural antique bronze */
+  --c-gold-800: #7e5c2f; /* Deep aged bronze */
+  --c-mustard: #e09f3e; /* Warm amber highlight */
+  --c-mustard-light: #faedd9;
+
+  /* ---------- Semantic ---------- */
+  --c-success: #3a854a;
+  --c-success-light: #e8f3ea;
+  --c-warning: #f6ab2f;
+  --c-warning-light: #fff4e6;
+  --c-error: #a20b00;
+  --c-error-light: #fdeeef;
+  --c-info: #365677;
+  --c-info-light: #e9eff5;
+
+  /* ---------- Foreground on coloured surfaces ---------- */
+  --c-on-primary: #ffffff;
+  --c-on-secondary: #ffffff;
+  --c-on-gold: #100e0d;
+
+  /* ---------- Elevation — soft and warm, never harsh black ---------- */
+  --e-1: 0 1px 2px rgb(65 48 62 / 0.06);
+  --e-2: 0 4px 12px rgb(65 48 62 / 0.08);
+  --e-3: 0 8px 28px rgb(65 48 62 / 0.1);
+  --e-4: 0 16px 48px rgb(65 48 62 / 0.14);
+  --e-ring: 0 0 0 1px rgb(65 48 62 / 0.08);
+
+  /* ---------- Layout ---------- */
+  --gutter: 16px;
+  --header-h: 64px;
+  --header-h-lg: 104px; /* utility row + main row */
+
+  /* ---------- Motion ---------- */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 400ms;
+  --dur-image: 600ms;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 40px;
+  }
+}
+
+/* =============================================================================
+   LUXE THEME — dark + champagne bronze variant for the luxury sub-brand (/luxe)
+   Applied by setting data-theme="luxe" on a wrapper element. Because theme.css
+   maps tokens with `@theme inline`, every Tailwind utility re-themes with it.
+   ============================================================================= */
+
+[data-theme='luxe'] {
+  --c-primary-50: #1a1714;
+  --c-primary-100: #25201b;
+  --c-primary-200: #383028;
+  --c-primary-300: #7e5c2f;
+  --c-primary-400: #9e753d;
+  --c-primary-500: #b38850;
+  --c-primary-600: #c5995e;
+  --c-primary-700: #d4b483;
+  --c-primary-800: #f3ede2;
+  --c-primary-900: #faf7f2;
+
+  --c-secondary-100: #24201c;
+  --c-secondary-300: #887f77;
+  --c-secondary-500: #c8bfb5;
+  --c-secondary-700: #f5f1ea; /* body text goes light */
+  --c-secondary-900: #ffffff;
+
+  --c-surface: #100e0d;
+  --c-surface-50: #171513;
+  --c-surface-100: #201d1a;
+  --c-surface-200: #2e2925;
+  --c-surface-300: #443d37;
+  --c-surface-400: #6b6158;
+  --c-surface-600: #9e9389;
+  --c-surface-800: #ded8cf;
+  --c-surface-900: #f5f1ea;
+
+  --c-on-primary: #100e0d;
+  --c-on-secondary: #100e0d;
+
+  --e-1: 0 1px 2px rgb(0 0 0 / 0.4);
+  --e-2: 0 4px 12px rgb(0 0 0 / 0.45);
+  --e-3: 0 8px 28px rgb(0 0 0 / 0.5);
+  --e-4: 0 16px 48px rgb(0 0 0 / 0.55);
+  --e-ring: 0 0 0 1px rgb(255 255 255 / 0.08);
+}
