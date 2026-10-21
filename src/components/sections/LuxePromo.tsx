@@ -6,18 +6,14 @@ import { AspectImage, Button, Container, Heading } from '@/ui';
 
 /**
  * The luxury sub-brand band.
- *
- * Wrapped in `data-theme="luxe"`, which re-points every colour token to the
- * dark-and-gold palette. Because theme.css maps colours with `@theme inline`,
- * the Button inside turns gold without being told to — the same markup that is
- * coral everywhere else on the page.
+ * Clean, editorial, and matching the light aesthetic of the rest of the site.
  */
 export function LuxePromo() {
   return (
-    <section data-theme="luxe" className="bg-surface">
+    <section className="bg-surface-50 border-y border-surface-200">
       <Container className="grid items-center gap-8 py-14 md:grid-cols-2 md:gap-12 lg:py-20">
         <div>
-          <p className="text-eyebrow text-gold-400 uppercase tracking-[0.2em] font-semibold">{brand.name} Luxe</p>
+          <p className="text-eyebrow text-primary-600 uppercase tracking-wider font-semibold">{brand.name} Luxe</p>
           <Heading as="h2" level="h2" className="mt-3">
             When the catalogue is the starting point, not the answer.
           </Heading>
@@ -39,9 +35,9 @@ export function LuxePromo() {
         <AspectImage
           {...photo('luxe1', 'landscape', 1080)}
           sizes={SIZES.half}
-          alt=""
+          alt="Aangan Luxe Interior Craftsmanship"
           ratio="landscape"
-          className="rounded-lg"
+          className="rounded-xl border border-surface-200 shadow-e2"
         />
       </Container>
     </section>

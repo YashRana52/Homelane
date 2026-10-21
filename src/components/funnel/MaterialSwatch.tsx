@@ -77,7 +77,7 @@ export function MaterialSwatch({ materialId, className }: MaterialSwatchProps) {
               }}
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/40 to-transparent p-1">
-              <span className="text-[10px] font-semibold uppercase tracking-wider text-gold-400">
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-white">
                 Natural Wood Grain
               </span>
             </div>
@@ -125,7 +125,7 @@ export function MaterialSwatch({ materialId, className }: MaterialSwatchProps) {
 
       case 'luxe':
         return (
-          <div className="relative h-14 w-full overflow-hidden rounded-sm bg-gradient-to-r from-[#201c19] via-[#423326] to-[#b38850] p-1 text-gold-400">
+          <div className="relative h-14 w-full overflow-hidden rounded-sm bg-gradient-to-r from-secondary-900 via-secondary-700 to-primary-700 p-1 text-white">
             <span className="text-[10px] font-semibold uppercase tracking-wider">
               Luxe Architectural
             </span>

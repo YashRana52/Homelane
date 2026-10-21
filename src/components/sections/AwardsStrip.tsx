@@ -22,7 +22,7 @@ export function AwardsStrip() {
         {awards.map((award, i) => (
           <Reveal as="li" key={award.id} delay={i * 0.05} className="h-full">
             <div className="border-surface-200 flex h-full flex-col rounded-md border p-5">
-              <Trophy className="text-gold-600 size-6 shrink-0" aria-hidden="true" />
+              <Trophy className="text-primary-600 size-6 shrink-0" aria-hidden="true" />
               <p className="text-h4 font-display mt-3 flex-1">{award.title}</p>
               <p className="text-caption text-surface-600 mt-2">
                 {award.issuer} · {award.year}

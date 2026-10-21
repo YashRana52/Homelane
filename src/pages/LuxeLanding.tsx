@@ -2,7 +2,7 @@ import { ArrowRight, Crown, Diamond, ShieldCheck, Sparkles } from 'lucide-react'
 
 import { LeadForm } from '@/components/funnel/LeadForm';
 import { photo, SIZES } from '@/config/images';
-import { AspectImage, Breadcrumb, Container } from '@/ui';
+import { AspectImage, Breadcrumb, Button, Container } from '@/ui';
 
 const luxeProjects = [
   {
@@ -30,91 +30,119 @@ const luxeProjects = [
 
 export default function LuxeLanding() {
   return (
-    <div data-theme="luxe" className="min-h-screen bg-surface text-surface-900 transition-colors duration-500">
-      <Container className="pt-4">
-        <Breadcrumb items={[{ label: 'Aangan Luxe' }]} className="text-surface-600" />
-      </Container>
+    <div className="min-h-screen bg-surface text-secondary-700">
+      <div className="border-b border-surface-200 bg-surface">
+        <Container className="py-3">
+          <Breadcrumb items={[{ label: 'Aangan Luxe' }]} />
+        </Container>
+      </div>
 
-      {/* Editorial Full-Bleed Hero */}
-      <section className="relative overflow-hidden py-24 sm:py-32">
-        {/* Ambient atmospheric champagne glow */}
-        <div className="pointer-events-none absolute -top-40 right-1/4 size-[600px] rounded-full bg-gold-600/10 blur-[140px]" />
-        <div className="pointer-events-none absolute bottom-0 left-10 size-[400px] rounded-full bg-gold-800/10 blur-[120px]" />
-
-        <div className="absolute inset-0 z-0 opacity-20">
-          <AspectImage
-            {...photo('heroGallery', 'landscape', 1920)}
-            sizes="100vw"
-            alt="Luxe Interiors"
-            ratio="landscape"
-            className="h-full w-full object-cover filter grayscale contrast-125"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/85 to-transparent" />
-        </div>
-
-        <Container className="relative z-10">
-          <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-600/10 backdrop-blur-sm px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold-400 shadow-sm shadow-gold-600/10">
-              <Crown className="size-3.5 text-gold-400" /> High Architectural Tier
+      {/* Hero Section — Clean, Professional, Editorial */}
+      <section className="relative overflow-hidden bg-surface py-14 sm:py-20 border-b border-surface-200">
+        <Container className="grid items-center gap-12 lg:grid-cols-12">
+          <div className="space-y-6 lg:col-span-7">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-primary-700">
+              <Crown className="size-3.5 text-primary-600" />
+              <span>Architectural Tier</span>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-light tracking-tight text-surface-900 leading-[1.1]">
-              The Art of <span className="italic font-normal bg-gradient-to-r from-gold-200 via-gold-400 to-gold-600 bg-clip-text text-transparent">Bespoke</span> Living.
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-secondary-700 leading-[1.15]">
+              The Art of <span className="text-primary-600">Bespoke</span> Living.
             </h1>
 
-            <p className="text-lg sm:text-xl font-light text-surface-600 leading-relaxed max-w-2xl">
+            <p className="text-body-lg text-surface-600 leading-relaxed max-w-xl">
               Curated for discerning homeowners who seek architectural distinction, rare materials, and uncompromising craftsmanship. Handled exclusively by our Principal Design Council.
             </p>
 
-            <div className="pt-4 flex flex-wrap items-center gap-4">
-              <a
-                href="#luxe-enquiry"
-                className="inline-flex items-center gap-2.5 rounded-sm bg-gradient-to-r from-gold-600 to-[#c5995e] px-7 py-3.5 text-sm font-semibold text-on-gold shadow-lg shadow-gold-600/20 transition-all duration-300 hover:brightness-110 hover:shadow-xl hover:shadow-gold-600/30 active:scale-[0.99]"
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <Button
+                to="#luxe-enquiry"
+                variant="primary"
+                size="lg"
+                iconRight={<ArrowRight className="size-4" />}
               >
-                <span>Request Private Consultation</span>
-                <ArrowRight className="size-4" />
-              </a>
-              <a
-                href="#luxe-portfolio"
-                className="inline-flex items-center gap-2 rounded-sm border border-gold-400/30 bg-surface-50/40 backdrop-blur-sm px-6 py-3.5 text-sm font-semibold text-gold-400 transition-all duration-300 hover:border-gold-400/60 hover:bg-gold-600/10 hover:text-gold-200"
+                Request Consultation
+              </Button>
+              <Button
+                to="#luxe-portfolio"
+                variant="outline"
+                size="lg"
               >
-                Explore Curated Residences
-              </a>
+                Explore Residences
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-3 gap-6 pt-6 border-t border-surface-200">
+              <div>
+                <p className="font-display text-2xl font-bold text-secondary-700">100%</p>
+                <p className="text-caption text-surface-600 mt-0.5">Bespoke Drawings</p>
+              </div>
+              <div>
+                <p className="font-display text-2xl font-bold text-secondary-700">1-on-1</p>
+                <p className="text-caption text-surface-600 mt-0.5">Principal Architect</p>
+              </div>
+              <div>
+                <p className="font-display text-2xl font-bold text-secondary-700">₹25L+</p>
+                <p className="text-caption text-surface-600 mt-0.5">Typical Project Size</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-5">
+            <div className="relative overflow-hidden rounded-2xl border border-surface-200 shadow-e3">
+              <AspectImage
+                {...photo('heroGallery', 'portrait', 1080)}
+                sizes={SIZES.half}
+                alt="Aangan Luxe Interior Design"
+                ratio="portrait"
+                className="w-full object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-6 text-white">
+                <p className="text-xs font-semibold uppercase tracking-wider text-white/80">Worli Residence</p>
+                <p className="font-display text-lg font-medium text-white">Bookmatched Italian Marble & Smoked Oak</p>
+              </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* Pillars of Luxe */}
-      <section className="border-y border-gold-400/15 bg-surface-50 py-16">
+      {/* Pillars of Luxe — Clean Light 3-Grid */}
+      <section className="bg-surface-50 py-16 border-b border-surface-200">
         <Container>
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <p className="text-eyebrow text-primary-600 uppercase tracking-wider">The Luxe Standard</p>
+            <h2 className="font-display text-3xl font-semibold text-secondary-700 mt-2">
+              Why Discerning Homeowners Choose Luxe
+            </h2>
+          </div>
+
           <div className="grid gap-8 sm:grid-cols-3">
-            <div className="space-y-3">
-              <div className="grid size-12 place-items-center rounded-sm border border-gold-400/25 bg-gold-600/10 text-gold-400 shadow-sm">
+            <div className="rounded-xl border border-surface-200 bg-surface p-6 shadow-sm">
+              <div className="grid size-12 place-items-center rounded-lg bg-primary-50 text-primary-600 mb-5">
                 <Diamond className="size-6" />
               </div>
-              <h2 className="font-display text-xl font-medium text-surface-900">Rare Material Sourcing</h2>
-              <p className="text-sm text-surface-600 leading-relaxed">
+              <h3 className="font-display text-xl font-semibold text-secondary-700">Rare Material Sourcing</h3>
+              <p className="text-body text-surface-600 mt-2 leading-relaxed">
                 Direct quarry-sourced Italian Statuario, natural smoked timber veneers, and architectural bronze metalwork curated globally.
               </p>
             </div>
 
-            <div className="space-y-3">
-              <div className="grid size-12 place-items-center rounded-sm border border-gold-400/25 bg-gold-600/10 text-gold-400 shadow-sm">
+            <div className="rounded-xl border border-surface-200 bg-surface p-6 shadow-sm">
+              <div className="grid size-12 place-items-center rounded-lg bg-primary-50 text-primary-600 mb-5">
                 <Sparkles className="size-6" />
               </div>
-              <h2 className="font-display text-xl font-medium text-surface-900">Principal Architect Lead</h2>
-              <p className="text-sm text-surface-600 leading-relaxed">
+              <h3 className="font-display text-xl font-semibold text-secondary-700">Principal Architect Lead</h3>
+              <p className="text-body text-surface-600 mt-2 leading-relaxed">
                 Every Luxe project is personally spearheaded by an award-winning Principal Architect and dedicated site concierge team.
               </p>
             </div>
 
-            <div className="space-y-3">
-              <div className="grid size-12 place-items-center rounded-sm border border-gold-400/25 bg-gold-600/10 text-gold-400 shadow-sm">
+            <div className="rounded-xl border border-surface-200 bg-surface p-6 shadow-sm">
+              <div className="grid size-12 place-items-center rounded-lg bg-primary-50 text-primary-600 mb-5">
                 <ShieldCheck className="size-6" />
               </div>
-              <h2 className="font-display text-xl font-medium text-surface-900">White-Glove Turnkey</h2>
-              <p className="text-sm text-surface-600 leading-relaxed">
+              <h3 className="font-display text-xl font-semibold text-secondary-700">White-Glove Turnkey</h3>
+              <p className="text-body text-surface-600 mt-2 leading-relaxed">
                 From structural revisions and automated climate acoustic control to custom art curation, fully delivered without compromise.
               </p>
             </div>
@@ -122,52 +150,54 @@ export default function LuxeLanding() {
         </Container>
       </section>
 
-      {/* Portfolio Showcase */}
-      <section id="luxe-portfolio" className="py-24">
+      {/* Portfolio Showcase — Clean Professional Cards */}
+      <section id="luxe-portfolio" className="py-20 bg-surface">
         <Container>
-          <div className="max-w-2xl mb-16">
-            <span className="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold block">
-              Curated Residences
-            </span>
-            <h2 className="font-display text-3xl sm:text-5xl font-light text-surface-900 mt-2">
+          <div className="max-w-2xl mb-14">
+            <p className="text-eyebrow text-primary-600 uppercase tracking-wider">Curated Portfolio</p>
+            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-secondary-700 mt-2">
               Spaces Designed to Outlast Trends
             </h2>
+            <p className="text-body-lg text-surface-600 mt-3">
+              Explore bespoke private residences engineered to custom architectural specifications.
+            </p>
           </div>
 
-          <div className="space-y-16">
+          <div className="space-y-12">
             {luxeProjects.map((proj, idx) => (
               <div
                 key={idx}
-                className="grid gap-8 lg:grid-cols-2 items-center rounded-lg border border-gold-400/15 bg-surface-50/90 backdrop-blur-sm p-6 sm:p-10 shadow-xl transition-all duration-300 hover:border-gold-400/30 hover:shadow-2xl"
+                className="grid gap-8 lg:grid-cols-12 items-center rounded-xl border border-surface-200 bg-surface p-6 sm:p-8 shadow-e2 transition hover:shadow-e3"
               >
-                <div className={`overflow-hidden rounded-md border border-gold-400/20 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
+                <div className={`overflow-hidden rounded-lg lg:col-span-6 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <AspectImage
                     {...photo(proj.photo, 'landscape', 1280)}
                     sizes={SIZES.hero}
                     alt={proj.title}
                     ratio="landscape"
-                    className="w-full object-cover transition-transform duration-700 hover:scale-105"
+                    className="w-full object-cover transition-transform duration-500 hover:scale-102"
                   />
                 </div>
 
-                <div className="space-y-4">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-gold-400">
+                <div className="space-y-4 lg:col-span-6">
+                  <span className="text-caption font-semibold uppercase tracking-wider text-primary-600">
                     {proj.location} · {proj.type}
                   </span>
-                  <h3 className="font-display text-2xl sm:text-3xl font-light text-surface-900">
+                  <h3 className="font-display text-2xl sm:text-3xl font-semibold text-secondary-700">
                     {proj.title}
                   </h3>
-                  <p className="text-sm text-surface-600 leading-relaxed border-t border-gold-400/15 pt-4">
+                  <p className="text-body text-surface-600 leading-relaxed border-t border-surface-200 pt-4">
                     {proj.highlights}
                   </p>
                   <div className="pt-2">
-                    <a
-                      href="#luxe-enquiry"
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold-400 transition-colors duration-200 hover:text-gold-200"
+                    <Button
+                      to="#luxe-enquiry"
+                      variant="outline"
+                      size="md"
+                      iconRight={<ArrowRight className="size-4" />}
                     >
-                      <span>Commission a Similar Brief</span>
-                      <ArrowRight className="size-4" />
-                    </a>
+                      Commission a Similar Brief
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -176,24 +206,20 @@ export default function LuxeLanding() {
         </Container>
       </section>
 
-      {/* Bespoke Enquiry Form */}
-      <section id="luxe-enquiry" className="border-t border-gold-400/15 bg-surface-50 py-24">
-        <Container className="max-w-3xl">
-          <div className="text-center mb-12">
-            <span className="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold block">
-              Private Commission
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-light text-surface-900 mt-2">
+      {/* Enquiry Form Section — Clean and Simple */}
+      <section id="luxe-enquiry" className="border-t border-surface-200 bg-surface-50 py-20">
+        <Container className="max-w-2xl">
+          <div className="text-center mb-10">
+            <p className="text-eyebrow text-primary-600 uppercase tracking-wider">Private Commission</p>
+            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-secondary-700 mt-2">
               Initiate Your Luxe Consultation
             </h2>
-            <p className="text-sm text-surface-600 mt-2 max-w-lg mx-auto">
+            <p className="text-body text-surface-600 mt-3">
               Share details about your upcoming property. A Principal Consultant will reach out within one business day.
             </p>
           </div>
 
-          <div className="relative rounded-xl border border-gold-400/20 bg-surface p-8 sm:p-10 shadow-2xl overflow-hidden">
-            {/* Elegant champagne hairline */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-gold-400/60 to-transparent" />
+          <div className="rounded-xl border border-surface-200 bg-surface p-6 sm:p-10 shadow-e3">
             <LeadForm
               source="luxe:bespoke-enquiry"
               submitLabel="Request Private Design Consultation"

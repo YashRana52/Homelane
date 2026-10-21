@@ -49,7 +49,7 @@ const packageDetails: Record<
   },
   luxe: {
     badge: 'Luxury Spec',
-    tone: 'gold',
+    tone: 'new',
     finishNote: 'Natural Timber Veneer & PU Polish',
     features: [
       'Hand-matched natural timber grains',
@@ -142,9 +142,7 @@ export function PackageSelector({
               'has-[:focus-visible]:outline-primary-500 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2',
               card.highlight && !selected && 'border-primary-300 bg-surface shadow-sm',
               selected
-                ? card.tone === 'gold'
-                  ? 'border-gold-600 bg-gold-400/5 shadow-md ring-2 ring-gold-600/30'
-                  : 'border-primary-500 bg-primary-50/60 shadow-md ring-2 ring-primary-500/20'
+                ? 'border-primary-500 bg-primary-50/60 shadow-md ring-2 ring-primary-500/20'
                 : 'border-surface-200 bg-surface hover:border-surface-400 hover:shadow-sm',
             )}
           >
@@ -166,9 +164,7 @@ export function PackageSelector({
                   className={cn(
                     'grid size-5 shrink-0 place-items-center rounded-full border transition-colors',
                     selected
-                      ? card.tone === 'gold'
-                        ? 'bg-gold-600 border-gold-600 text-white'
-                        : 'bg-primary-500 border-primary-500 text-on-primary'
+                      ? 'bg-primary-500 border-primary-500 text-on-primary'
                       : 'border-surface-300 bg-transparent group-hover:border-surface-400',
                   )}
                   aria-hidden="true"

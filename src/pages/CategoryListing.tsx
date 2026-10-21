@@ -201,7 +201,7 @@ export default function CategoryListing() {
                 {idx === 3 && (
                   <div className="col-span-full rounded-lg bg-gradient-to-r from-secondary-700 to-secondary-900 p-6 sm:p-8 text-white my-4 shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
                     <div className="max-w-xl">
-                      <span className="text-caption uppercase tracking-wider text-gold-400 font-semibold flex items-center gap-1.5">
+                      <span className="text-caption uppercase tracking-wider text-primary-300 font-semibold flex items-center gap-1.5">
                         <Sparkles className="size-4" /> Free 3D Design Session
                       </span>
                       <h2 className="text-h3 font-display mt-2 font-bold text-white">
@@ -212,7 +212,7 @@ export default function CategoryListing() {
                       </p>
                     </div>
                     <Button
-                      variant="gold"
+                      variant="primary"
                       size="lg"
                       onClick={() =>
                         open({
